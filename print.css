@@ -1,0 +1,126 @@
+/*用紙の設定*/
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+/*各シートの設定*/
+.sheet {
+  /*padding-top: 10mm;*/
+  width: 297mm;
+  height:  210mm;
+  page-break-after: always;
+  display: flex;
+  justify-content: center;
+  table-layout: fixed;
+}
+
+.half-sheet {
+  float: left;
+  margin: 3mm;
+  width: 141mm;
+}
+
+/*問題の箱*/
+.problem-box {
+  float: center;
+  width: 140mm;
+  height: 20mm;
+  border: 1px solid #000;
+}
+
+.problem-box:nth-of-type(n+2) {
+  margin-top: 5mm;
+}
+
+/*問題番号*/
+.number {
+  float: left;
+  width: 10mm;
+  height: 100%;
+  border-right: 1px solid #000;
+}
+
+.number p {
+  text-align: center;
+  font-size: 20px;
+  padding-top; 5mm;
+}
+
+/*単語の箱*/
+.word-box {
+  float: left;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 129mm;
+
+  display: flex;
+  justify-content: center;
+  table-layout: fixed;
+}
+
+/*単語の問題側と回答*/
+.question {
+  border-right: 1px solid #000;
+  width: 64.5mm;
+  height: 100%;
+  text-align: center;
+  display: table;
+}
+
+.question .text {
+  display: table-cell;
+  width: 64.5mm;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  word-break: break-all;
+}
+
+.answer {
+  width: 64.5mm;
+  height: 100%;
+  text-align: center;
+  display: table;
+}
+
+.answer .text {
+  display: table-cell;
+  width: 64.5mm;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  word-break: break-all;
+}
+
+/*プレビュー用*/
+@media screen {
+  body {
+    background: #eee;
+  }
+
+  .sheet {
+    background: white;
+    box-shadow: 0 0.5mm 2mm rgba(0, 0, 0, .3);
+    margin: 5mm;
+    width: 297mm;
+    height:  210mm;
+  }
+  
+  .problem-box {
+    float: left;
+    width: 141mm;
+    height: 20mm;
+    border: 1px solid #000;
+  }
+
+  .word-box {
+    float: left;
+    width: 130mm;
+    height: 20mm;
+  }
+}
+
